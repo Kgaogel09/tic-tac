@@ -1,0 +1,174 @@
+$primary-color: #fff;
+$secondary-color: #000;
+$font-family: 'Inter', 'sans-serif';
+
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $font-family;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $secondary-color;
+}
+
+.font-xs {
+  font-size: 1rem;
+}
+
+.font-sm {
+  font-size: 1.25rem;
+}
+
+.font-md {
+  font-size: 1.5rem;
+}
+
+.font-lg {
+  font-size: 2.5rem;
+}
+
+.font-xlg {
+  font-size: 3.75rem;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.transform {
+  text-transform: uppercase;
+}
+
+/* links */
+a {
+  color: $secondary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  font-family: $font-family;
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  border-radius: 28px;
+  border: 2px solid $secondary-color;
+}
+
+.btn-primary {
+  background-color: transparent;
+  color: $secondary-color;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    color: $primary-color;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  border: 2px solid transparent;
+  color: $primary-color;
+}
+
+.btn-sm {
+  width: 140px;
+}
+
+.btn-md {
+  width: 228px;
+}
+
+.close-btn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+}
+
+
+/* forms */
+input,
+select,
+textarea {
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 200px;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    border-color: lighten($secondary-color, 30%);
+    outline: none;
+  }
+}
+
+// containers
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.avatar-img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+// Alerts
+.alert {
+  background-color: lighten($secondary-color, 50%);
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+  color: $secondary-color;
+  padding: 10px;
+}
+
+.alert-success {
+  background-color: lighten($primary-color, 50%);
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
+// Media queries
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
