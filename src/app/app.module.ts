@@ -15,6 +15,7 @@ import { ActiveGameComponent } from './screens/active-game/active-game.component
 import { BoardComponent } from './components/board/board.component';
 import { SquareComponent } from './components/square/square.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { WinnerComponent } from './screens/winner/winner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { AuthGuard } from './services/auth-guard.service';
     ActiveGameComponent,
     BoardComponent,
     SquareComponent,
+    WinnerComponent,
   ],
   imports: [
     BrowserModule,
