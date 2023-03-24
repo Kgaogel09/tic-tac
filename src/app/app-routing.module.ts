@@ -5,6 +5,7 @@ import { AuthComponent } from './screens/auth/auth.component';
 import { LoginComponent } from './screens/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -23,14 +24,17 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'new-game',
     component: NewGameComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'active-game',
     component: ActiveGameComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

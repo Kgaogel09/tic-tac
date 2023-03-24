@@ -14,6 +14,7 @@ import { AuthService } from './services/auth.service';
 import { ActiveGameComponent } from './screens/active-game/active-game.component';
 import { BoardComponent } from './components/board/board.component';
 import { SquareComponent } from './components/square/square.component';
+import { AuthGuard } from './services/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { SquareComponent } from './components/square/square.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
