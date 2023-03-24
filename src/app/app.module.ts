@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { ActiveGameComponent } from './screens/active-game/active-game.component';
+import { BoardComponent } from './components/board/board.component';
+import { SquareComponent } from './components/square/square.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { ActiveGameComponent } from './screens/active-game/active-game.component
     HomeComponent,
     NewGameComponent,
     ActiveGameComponent,
+    BoardComponent,
+    SquareComponent,
   ],
   imports: [
     BrowserModule,
