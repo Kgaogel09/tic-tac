@@ -14,14 +14,6 @@ main {
   padding: 28px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
 /* Typography */
 h1,
 h2,
@@ -113,11 +105,12 @@ button {
 
 .close-btn {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   text-align: center;
   padding: 0;
+
 }
 
 /* Forms */

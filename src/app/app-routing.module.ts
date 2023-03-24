@@ -1,3 +1,4 @@
+import { NewGameComponent } from './screens/new-game/new-game.component';
 import { HomeComponent } from './screens/home/home.component';
 import { AuthComponent } from './screens/auth/auth.component';
 import { LoginComponent } from './screens/login/login.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'new-game',
+    component: NewGameComponent,
   },
 ];
 
