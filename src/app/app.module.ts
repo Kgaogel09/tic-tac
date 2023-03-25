@@ -12,10 +12,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { ActiveGameComponent } from './screens/active-game/active-game.component';
-import { BoardComponent } from './components/board/board.component';
-import { SquareComponent } from './components/square/square.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { WinnerComponent } from './screens/winner/winner.component';
+import { UserComponent } from './components/user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,15 +24,15 @@ import { WinnerComponent } from './screens/winner/winner.component';
     HomeComponent,
     NewGameComponent,
     ActiveGameComponent,
-    BoardComponent,
-    SquareComponent,
     WinnerComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
