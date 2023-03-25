@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  isActiveGame: boolean = false;
   newGame: boolean = false;
   user$ = this.authService.user$;
 

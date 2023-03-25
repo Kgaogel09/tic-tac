@@ -1,9 +1,5 @@
 <div class="avatar" *ngIf="user$ | async as user">
-  <img class="avatar-img" [src]="user.photoURL" alt="" loading="lazy" />
-  <div>
-    <p class="font-sm transform">Welcome</p>
-    <h2 class="font-lg bold">{{ user.displayName }}</h2>
-  </div>
+  <app-user [isPlaying]="isActiveGame"></app-user>
   <div>
     <button class="btn-primary btn-sm" routerLink="/new-game">New Game</button>
     <button class="btn-primary btn-sm" (click)="logout()">Log out</button>
