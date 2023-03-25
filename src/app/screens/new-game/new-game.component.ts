@@ -17,7 +17,7 @@ export class NewGameComponent implements OnInit {
 
   startPlaying() {
     if (!this.playerName.valid) {
-      alert('Please Enter a Player name');
+      this.playerName.markAsTouched();
       return;
     }
     localStorage.setItem('player2', JSON.stringify(this.playerName.value));
