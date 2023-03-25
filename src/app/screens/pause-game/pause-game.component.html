@@ -1,0 +1,13 @@
+<div *ngIf="user$ | async as user">
+  <h5 class="font-sm transform bold">Active</h5>
+  <img src="assets/images/tic.png" alt="" />
+  <p class="font-sm">{{ user.displayName }}</p>
+  <span> <button class="close-btn btn-secondary">vs</button></span>
+  <p class="font-sm">{{ player2 }}</p>
+  <button class="btn btn-primary btn-md" routerLink="/active-game">
+    Continue playing
+  </button>
+  <button class="btn close-btn btn-primary" routerLink="/new-game">
+    <i class="fa fa-times light" aria-hidden="true"></i>
+  </button>
+</div>

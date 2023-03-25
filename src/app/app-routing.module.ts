@@ -6,6 +6,7 @@ import { LoginComponent } from './screens/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth-guard.service';
+import { PauseGameComponent } from './screens/pause-game/pause-game.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'active-game',
     component: ActiveGameComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'pause-game',
+    component: PauseGameComponent,
     canActivate: [AuthGuard],
   },
 ];
