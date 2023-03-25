@@ -1,3 +1,17 @@
-<app-board></app-board>
+<app-user [isPlaying]="isActiveGame"></app-user>
 
-<!-- <app-winner></app-winner> -->
+<div class="board">
+  <div
+    *ngFor="let cell of board; let i = index"
+    class="cell"
+    (click)="makeMove(i)"
+  >
+    {{ cell }}
+  </div>
+</div>
+
+<button class="btn-primary btn-md" (click)="resetGame()">Reset Game</button>
+<button class="close-btn btn-primary" routerLink="/new-game">
+  <i class="fa fa-times light" aria-hidden="true"></i>
+</button>
+<div class="game-status">{{ gameStatus }}</div>
