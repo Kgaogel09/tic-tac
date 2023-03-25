@@ -15,6 +15,7 @@ import { ActiveGameComponent } from './screens/active-game/active-game.component
 import { AuthGuard } from './services/auth-guard.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PastGamesComponent } from './components/past-games/past-games.component';
+import { PauseGameComponent } from './screens/pause-game/pause-game.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { PastGamesComponent } from './components/past-games/past-games.component
     NewGameComponent,
     ActiveGameComponent,
     PastGamesComponent,
+    PauseGameComponent,
   ],
   imports: [
     BrowserModule,
