@@ -1,17 +1,34 @@
-<app-user [isPlaying]="isActiveGame"></app-user>
-
-<div class="board">
-  <div
-    *ngFor="let cell of board; let i = index"
-    class="cell"
-    (click)="makeMove(i)"
-  >
-    {{ cell }}
+<ng-container *ngIf="!winner">
+  <div>
+    <p class="font-sm transform">Now playing</p>
+    <h2>{{ getCurrentPlayer(player) }}</h2>
   </div>
-</div>
+  <div class="game-container">
+    <div
+      class="game-square"
+      (click)="makeMove(i)"
+      *ngFor="let value of squares; let i = index"
+    >
+      <button *ngIf="!value">{{ value }}</button>
+      <button color *ngIf="value === 'X'">
+        {{ value }}
+      </button>
+      <button *ngIf="value === 'O'">{{ value }}</button>
+    </div>
+  </div>
 
-<button class="btn-primary btn-md" (click)="resetGame()">Reset Game</button>
-<button class="close-btn btn-primary" routerLink="/new-game">
-  <i class="fa fa-times light" aria-hidden="true"></i>
-</button>
-<div class="game-status">{{ gameStatus }}</div>
+  <button class="btn btn-primary btn-md" (click)="newGame()">Reset Game</button>
+  <button class="btn close-btn btn-primary" routerLink="/new-game">
+    <i class="fa fa-times light" aria-hidden="true"></i>
+  </button>
+</ng-container>
+
+<ng-container *ngIf="winner">
+  <i class="fa fa-star-o icon" aria-hidden="true"></i>
+  <h2 class="font-xlg bold">{{ getCurrentPlayer(winner) }}</h2>
+  <button class="btn btn-secondary btn-md transform bold font-md">Wins</button>
+  <button class="btn btn-primary btn-md" (click)="newGame()">Rematch</button>
+  <button class="btn close-btn btn-primary" routerLink="/new-game">
+    <i class="fa fa-times light" aria-hidden="true"></i>
+  </button>
+</ng-container>

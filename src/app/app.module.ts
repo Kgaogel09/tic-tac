@@ -13,7 +13,6 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { ActiveGameComponent } from './screens/active-game/active-game.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { WinnerComponent } from './screens/winner/winner.component';
 import { UserComponent } from './components/user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
@@ -24,7 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     NewGameComponent,
     ActiveGameComponent,
-    WinnerComponent,
     UserComponent,
   ],
   imports: [

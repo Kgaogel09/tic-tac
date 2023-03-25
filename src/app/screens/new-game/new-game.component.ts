@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -6,8 +8,19 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './new-game.component.html',
   styleUrls: ['./new-game.component.scss'],
 })
-export class NewGameComponent {
+export class NewGameComponent implements OnInit {
   user$ = this.authService.user$;
+  playerName = new FormControl('', Validators.required);
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor(private authService: AuthService) {}
+  ngOnInit(): void {}
+
+  startPlaying() {
+    if (!this.playerName.valid) {
+      alert('Please Enter a Player name');
+      return;
+    }
+    localStorage.setItem('player2', JSON.stringify(this.playerName.value));
+    this.router.navigate(['/active-game']);
+  }
 }

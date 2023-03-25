@@ -1,36 +1,65 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
+enum Players {
+  'X' = 'player1',
+  'O' = 'player2',
+}
 @Component({
   selector: 'app-active-game',
   templateUrl: './active-game.component.html',
   styleUrls: ['./active-game.component.scss'],
 })
 export class ActiveGameComponent {
-  currentPlayer: string = 'X';
-  isActiveGame = true;
-  user$ = this.authService.user$;
-  board: any[] = ['', '', '', '', '', '', '', '', ''];
-  gameStatus: string = '';
-  winner: any;
+  squares: any;
+  xIsNext: any;
+  winner: string;
+  storePlayer2 = localStorage.getItem('player2');
+  pastGames = localStorage.getItem('games');
+  activePlayers = {
+    player1: '',
+    player2: this.storePlayer2 ? JSON.parse(this.storePlayer2) : null,
+  };
+  games = this.pastGames ? JSON.parse(this.pastGames) : [];
 
-  constructor(private authService: AuthService) {}
+  constructor(private auth: AuthService) {
+    this.auth.user$.subscribe((user) => {
+      this.activePlayers.player1 = user?.displayName;
+    });
+  }
 
   ngOnInit() {
-    this.resetGame();
+    this.newGame();
   }
 
-  makeMove(index: number) {
-    if (this.board[index] === '') {
-      this.board[index] = this.currentPlayer;
-      this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-      this.gameStatus = this.calculateGameStatus();
+  getCurrentPlayer(player) {
+    return this.activePlayers[Players[player]];
+  }
+
+  newGame() {
+    this.winner = '';
+    this.squares = Array(9).fill(null);
+  }
+
+  get player() {
+    return this.xIsNext ? 'X' : 'O';
+  }
+
+  makeMove(idx: number) {
+    if (!this.squares[idx]) {
+      this.squares.splice(idx, 1, this.player);
+      this.xIsNext = !this.xIsNext;
     }
-    this.winner = this.calculateGameStatus();
+    this.winner = this.calculateWinner();
+    if (this.winner) {
+      // show the winner component
+      this.games.push(this.winner);
+      localStorage.setItem('games', JSON.stringify(this.games));
+    }
   }
 
-  calculateGameStatus(): string {
-    const winningCombinations = [
+  calculateWinner() {
+    const lines = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -40,28 +69,16 @@ export class ActiveGameComponent {
       [0, 4, 8],
       [2, 4, 6],
     ];
-
-    for (let i = 0; i < winningCombinations.length; i++) {
-      const [a, b, c] = winningCombinations[i];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
       if (
-        this.board[a] !== '' &&
-        this.board[a] === this.board[b] &&
-        this.board[a] === this.board[c]
+        this.squares[a] &&
+        this.squares[a] === this.squares[b] &&
+        this.squares[a] === this.squares[c]
       ) {
-        return `${this.board[a]} wins!`;
+        return this.squares[a];
       }
     }
-
-    if (this.board.includes('')) {
-      return `It's ${this.currentPlayer}'s turn.`;
-    } else {
-      return 'The game is a tie!';
-    }
-  }
-
-  resetGame() {
-    this.currentPlayer = 'X';
-    this.gameStatus = '';
-    this.board = ['', '', '', '', '', '', '', '', ''];
+    return null;
   }
 }
