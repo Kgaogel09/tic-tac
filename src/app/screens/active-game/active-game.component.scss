@@ -1,3 +1,9 @@
+.active-game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-container {
   width: 100%;
   display: flex;
@@ -12,7 +18,7 @@
 }
 
 .game-square {
-  border: 1px solid #000;
+  border: 2px solid #000;
   height: 100px;
   width: 32%;
 
@@ -22,12 +28,8 @@
     font-size: 5em !important;
     background-color: transparent;
     color: #000;
+    border: none;
   }
-}
-
-
-.icon {
-  font-size: 12.5em;
 }
 
 .game-square:nth-child(-n + 3) {
@@ -46,6 +48,7 @@
   border-bottom: none;
 }
 
-// .game-square:hover {
-//   background-color: #ddd;
-// }
+
+.icon {
+  font-size: 12.5em;
+}

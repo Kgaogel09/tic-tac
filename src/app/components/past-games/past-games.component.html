@@ -1,0 +1,11 @@
+<div class="past-games-container">
+  <div class="past-game" *ngFor="let game of games">
+    <!-- <img /> -->
+    <div class="game-details">
+      <span class="btn-secondary">winner</span>
+      <p class="font-sm">{{ game.players[0].playerName }}</p>
+      <button class="btn close-btn btn-secondary">vs</button>
+      <p class="font-sm">{{ game.players[1].playerName }}</p>
+    </div>
+  </div>
+</div>

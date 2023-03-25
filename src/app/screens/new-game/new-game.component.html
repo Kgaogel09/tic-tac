@@ -1,13 +1,13 @@
 <div class="avatar" *ngIf="user$ | async as user">
   <img class="avatar-img" [src]="user.photoURL" alt="" loading="lazy" />
 </div>
-<button class="close-btn btn-secondary">vs</button>
+<button class="btn close-btn btn-secondary">vs</button>
 <input type="text" [formControl]="playerName" placeholder="Enter Player Name" />
 <p class="font-xs">or</p>
-<button class="btn-primary btn-md">Play against a bot</button>
-<button class="btn-primary btn-md" (click)="startPlaying()">
+<button class="btn btn-primary btn-md">Play against a bot</button>
+<button class="btn btn-primary btn-md" (click)="startPlaying()">
   Start Playing
 </button>
-<button class="close-btn btn-primary" routerLink="/home">
+<button class="btn close-btn btn-primary" routerLink="/home">
   <i class="fa fa-times light" aria-hidden="true"></i>
 </button>

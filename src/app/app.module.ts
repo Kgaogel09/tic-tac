@@ -14,7 +14,7 @@ import { AuthService } from './services/auth.service';
 import { ActiveGameComponent } from './screens/active-game/active-game.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PastGamesComponent } from './screens/past-games/past-games.component';
+import { PastGamesComponent } from './components/past-games/past-games.component';
 @NgModule({
   declarations: [
     AppComponent,
