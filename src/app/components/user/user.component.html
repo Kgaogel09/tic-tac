@@ -1,0 +1,13 @@
+<div *ngIf="user$ | async as user">
+  <div *ngIf="isPlaying">
+    <p class="font-sm transform">Now playing</p>
+    <h2 class="font-lg bold">{{ user.displayName }}</h2>
+  </div>
+  <div *ngIf="!isPlaying">
+    <img class="avatar-img" [src]="user.photoURL" alt="" loading="lazy" />
+    <div>
+      <p class="font-sm transform">Welcome</p>
+      <h2 class="font-lg bold">{{ user.displayName }}</h2>
+    </div>
+  </div>
+</div>
