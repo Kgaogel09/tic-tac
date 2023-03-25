@@ -5,6 +5,15 @@ enum Players {
   'X' = 'player1',
   'O' = 'player2',
 }
+
+interface Player {
+  playerName: string;
+  isWinner: boolean;
+}
+
+interface Game {
+  players: Player[];
+}
 @Component({
   selector: 'app-active-game',
   templateUrl: './active-game.component.html',
@@ -14,13 +23,13 @@ export class ActiveGameComponent {
   squares: any;
   xIsNext: any;
   winner: string;
-  storePlayer2 = localStorage.getItem('player2');
+  storedPlayer2 = localStorage.getItem('player2');
   pastGames = localStorage.getItem('games');
   activePlayers = {
     player1: '',
-    player2: this.storePlayer2 ? JSON.parse(this.storePlayer2) : null,
+    player2: this.storedPlayer2 ? JSON.parse(this.storedPlayer2) : null,
   };
-  games = this.pastGames ? JSON.parse(this.pastGames) : [];
+  games: Game[] = this.pastGames ? JSON.parse(this.pastGames) : [];
 
   constructor(private auth: AuthService) {
     this.auth.user$.subscribe((user) => {
@@ -45,6 +54,10 @@ export class ActiveGameComponent {
     return this.xIsNext ? 'X' : 'O';
   }
 
+  getLoser(winner) {
+    return winner === 'X' ? 'O' : 'X';
+  }
+
   makeMove(idx: number) {
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player);
@@ -52,8 +65,19 @@ export class ActiveGameComponent {
     }
     this.winner = this.calculateWinner();
     if (this.winner) {
-      // show the winner component
-      this.games.push(this.winner);
+      const game: Game = {
+        players: [
+          {
+            playerName: this.getCurrentPlayer(this.winner),
+            isWinner: true,
+          },
+          {
+            playerName: this.getCurrentPlayer(this.getLoser(this.winner)),
+            isWinner: false,
+          },
+        ],
+      };
+      this.games.push(game);
       localStorage.setItem('games', JSON.stringify(this.games));
     }
   }
