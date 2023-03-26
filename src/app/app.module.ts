@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PastGamesComponent } from './components/past-games/past-games.component';
 import { PauseGameComponent } from './screens/pause-game/pause-game.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,12 @@ import { PauseGameComponent } from './screens/pause-game/pause-game.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

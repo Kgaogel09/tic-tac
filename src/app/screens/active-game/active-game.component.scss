@@ -15,7 +15,7 @@
 .game-square {
   border: 2px solid #000;
   height: 100px;
-  width: 32%;
+  width: 30%;
 
   button {
     width: 100%;
@@ -60,4 +60,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+}
+
+.game-wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }

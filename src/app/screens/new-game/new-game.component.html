@@ -1,6 +1,12 @@
 <div class="new-game-wrapper">
   <div class="avatar-wrapper w-100" *ngIf="user$ | async as user">
-    <img class="avatar-img w-100" [src]="user.photoURL" alt="" loading="lazy" />
+    <img
+      class="avatar-img w-100 mb-4"
+      [src]="user.photoURL"
+      alt=""
+      loading="lazy"
+    />
+    <h3 class="font-md">{{ user.displayName }}</h3>
   </div>
   <button class="btn close-btn btn-secondary my-2">vs</button>
   <input
