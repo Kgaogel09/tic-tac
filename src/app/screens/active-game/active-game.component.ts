@@ -41,7 +41,7 @@ export class ActiveGameComponent {
     this.newGame();
   }
 
-  getCurrentPlayer(player) {
+  getCurrentPlayerName(player) {
     return this.activePlayers[Players[player]];
   }
 
@@ -68,11 +68,11 @@ export class ActiveGameComponent {
       const game: Game = {
         players: [
           {
-            playerName: this.getCurrentPlayer(this.winner),
+            playerName: this.getCurrentPlayerName(this.winner),
             isWinner: true,
           },
           {
-            playerName: this.getCurrentPlayer(this.getLoser(this.winner)),
+            playerName: this.getCurrentPlayerName(this.getLoser(this.winner)),
             isWinner: false,
           },
         ],

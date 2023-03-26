@@ -1,4 +1,4 @@
-.game-container {
+.game-board {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -47,7 +47,7 @@
   font-size: 12.5em;
 }
 
-.btn-wrapper {
+.btn-group {
   display: flex;
   align-items: center;
   justify-content: center;

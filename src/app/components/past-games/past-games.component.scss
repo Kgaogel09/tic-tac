@@ -1,12 +1,13 @@
-.past-game-wrapper {
+.past-game {
   display: flex;
   justify-content: space-around;
   border: 2px solid #000;
-  padding: 10px 0;
   border-radius: 5px;
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
 
-.past-image-wrapper {
+.past-game-image {
   border: 2px solid #000;
   border-radius: 8px;
   padding: 4px;
@@ -14,8 +15,8 @@
 
 .winner-badge {
   border-radius: 28px;
+  padding: 0 16px;
   font-size: 12px;
-  padding: 0px 16px;
 }
 
 .game-details {

@@ -7,15 +7,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  isActiveGame: boolean = false;
-  newGame: boolean = false;
+  // isActiveGame: boolean = false;
   user$ = this.authService.user$;
 
   constructor(private authService: AuthService) {}
-
-  onNewGame() {
-    this.newGame = !this.newGame;
-  }
 
   logout() {
     this.authService.logout();

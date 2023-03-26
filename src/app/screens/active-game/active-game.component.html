@@ -1,23 +1,23 @@
-<div class="active-game-wrapper" *ngIf="!winner">
-  <div class="pt-5">
+<div class="game-wrapper" *ngIf="!winner">
+  <div class="player-info pt-5">
     <p class="font-sm transform">Now playing</p>
-    <h2 class="font-lg bold">{{ getCurrentPlayer(player) }}</h2>
+    <h2 class="font-lg bold">{{ getCurrentPlayerName(player) }}</h2>
   </div>
-  <div class="game-container">
+  <div class="game-board">
     <div
       class="game-square"
       (click)="makeMove(i)"
       *ngFor="let value of squares; let i = index"
     >
       <button *ngIf="!value">{{ value }}</button>
-      <button color *ngIf="value === 'X'">
+      <button *ngIf="value === 'X'">
         {{ value }}
       </button>
       <button *ngIf="value === 'O'">{{ value }}</button>
     </div>
   </div>
 
-  <div class="btn-wrapper">
+  <div class="btn-group">
     <button class="btn btn-primary btn-md" (click)="newGame()">
       Reset Game
     </button>
@@ -29,7 +29,7 @@
 
 <div class="winner-wrapper" *ngIf="winner">
   <i class="fa fa-star-o icon mb-4" aria-hidden="true"></i>
-  <h2 class="font-md bold">{{ getCurrentPlayer(winner) }}</h2>
+  <h2 class="font-md bold">{{ getCurrentPlayerName(winner) }}</h2>
   <button class="btn btn-secondary btn-md transform bold font-md mb-5">
     Wins
   </button>

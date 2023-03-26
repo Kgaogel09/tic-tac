@@ -1,13 +1,13 @@
 .floating-btn-wrapper {
   display: flex;
   position: fixed;
+  justify-content: center;
+  gap: 10px;
   background: #ffffffa3;
   bottom: 0;
   width: 100%;
   left: -15px;
-  justify-content: center;
   padding: 15px;
-  gap: 10px;
 }
 
 .user-info-wrapper {

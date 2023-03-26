@@ -1,5 +1,5 @@
 <div class="home-wrapper" *ngIf="user$ | async as user">
-  <div class="user-info-wrapper mb-4">
+  <div class="user-info-wrapper mb-4 pt-4">
     <img class="avatar-img" [src]="user.photoURL" alt="" loading="lazy" />
     <div class="ml-2">
       <p class="font-sm transform">Welcome</p>
@@ -7,7 +7,7 @@
     </div>
   </div>
   <h5 class="font-sm transform bold mb-4">Previous</h5>
-  <ng-container> <app-past-games></app-past-games> </ng-container>
+  <app-past-games></app-past-games>
   <div style="padding-bottom: 40px">&nbsp;</div>
   <div class="floating-btn-wrapper">
     <button class="btn btn-primary btn-sm" routerLink="/new-game">
