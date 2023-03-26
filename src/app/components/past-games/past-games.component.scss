@@ -1,0 +1,23 @@
+.past-game-wrapper {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid #000;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.past-image-wrapper {
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.winner-badge {
+  border-radius: 28px;
+  font-size: 12px;
+  padding: 0px 16px;
+}
+
+.game-details {
+  text-align: center;
+}

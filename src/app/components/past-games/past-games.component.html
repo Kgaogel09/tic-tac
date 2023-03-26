@@ -1,11 +1,13 @@
 <div class="past-games-container">
-  <div class="past-game" *ngFor="let game of games">
-    <img src="assets/images/tac.png" alt="" />
+  <div class="past-game-wrapper mb-4" *ngFor="let game of games">
+    <div class="past-image-wrapper">
+      <img src="assets/images/tac.png" alt="" />
+    </div>
     <div class="game-details">
-      <span class="btn-secondary">winner</span>
-      <p class="font-sm">{{ game.players[0].playerName }}</p>
-      <button class="btn close-btn btn-secondary">vs</button>
-      <p class="font-sm">{{ game.players[1].playerName }}</p>
+      <span class="btn-secondary font-xs winner-badge">winner</span>
+      <p class="font-xs my-1">{{ game.players[0].playerName }}</p>
+      <button class="mb-1 btn close-btn btn-secondary">vs</button>
+      <p class="font-xs">{{ game.players[1].playerName }}</p>
     </div>
   </div>
 </div>

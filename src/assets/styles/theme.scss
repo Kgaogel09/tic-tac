@@ -10,10 +10,6 @@ body {
   font-size: 16px;
 }
 
-main {
-  padding: 28px;
-}
-
 /* Typography */
 h1,
 h2,
@@ -48,9 +44,18 @@ h6 {
   margin: 0.25rem;
 }
 
+.my-1 {
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+}
+
 .my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.ml-2 {
+  margin-left: 1rem;
 }
 
 .mx-3 {
@@ -62,8 +67,16 @@ h6 {
   margin-top: 1.5rem;
 }
 
+.mb-1 {
+  margin-bottom: .8rem;
+}
+
 .mb-5 {
   margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .p-1 {
@@ -78,6 +91,10 @@ h6 {
 .px-3 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.pt-5 {
+  padding-top: 2rem;
 }
 
 .pt-4 {
@@ -101,7 +118,7 @@ h6 {
 }
 
 .font-lg {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .font-xlg {
@@ -131,6 +148,7 @@ a:hover {
 }
 
 /* Buttons */
+
 .btn {
   cursor: pointer;
   font-size: 16px;
@@ -144,7 +162,7 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: transparent;
+  background-color: $primary-color;
   color: $secondary-color;
 }
 
@@ -160,7 +178,7 @@ a:hover {
 }
 
 .btn-sm {
-  width: 140px;
+  width: 145px;
 }
 
 .btn-md {
@@ -169,24 +187,23 @@ a:hover {
 
 .close-btn {
   display: inline-block;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   text-align: center;
   padding: 0;
-
 }
 
 /* Forms */
 input,
 select,
 textarea {
-  border: 1px solid $secondary-color;
+  border: 2px solid $secondary-color;
   border-radius: 5px;
   font-size: 16px;
   padding: 10px 20px;
   text-align: center;
-  width: 200px;
+  width: 220px;
 }
 
 input::placeholder,
@@ -204,10 +221,7 @@ textarea:focus {
 
 /* Images */
 
-
 .avatar-img {
-  max-width: 100%;
-  height: 100%;
+  max-width: 165px;
   border-radius: 50%;
-  object-fit: cover;
 }

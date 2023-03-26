@@ -1,0 +1,22 @@
+.pause-game-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.pause-image-wrapper {
+  margin: 40px 0;
+}
+
+.now-playing {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 15px
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

@@ -4,7 +4,15 @@
   background: #ffffffa3;
   bottom: 0;
   width: 100%;
-  left: 0;
+  left: -15px;
   justify-content: center;
   padding: 15px;
+  gap: 10px;
+}
+
+.user-info-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
 }
