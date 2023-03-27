@@ -1,4 +1,5 @@
 <div class="past-games">
+  <h5 class="font-sm transform bold my-2">Previous</h5>
   <div class="past-game" *ngFor="let game of games">
     <div class="past-game-image">
       <img src="assets/images/tac.png" alt="Tic Tac Toe" />
@@ -9,5 +10,8 @@
       <button class="btn btn-secondary close-btn mb-1">vs</button>
       <p class="font-xs">{{ game.players[1].playerName }}</p>
     </div>
+  </div>
+  <div *ngIf="games.length <= 0">
+    <p>You haven't played any games before, let's get started!</p>
   </div>
 </div>
