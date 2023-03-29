@@ -1,14 +1,14 @@
 <div class="past-games">
-  <h5 class="font-sm transform bold my-2">Previous</h5>
+  <h5 class="font-sm transform bold my-2 black">Previous</h5>
   <div class="past-game" *ngFor="let game of games">
     <div class="past-game-image">
       <img src="assets/images/tac.png" alt="Tic Tac Toe" />
     </div>
     <div class="game-details">
       <span class="winner-badge btn btn-secondary font-size-xs">Winner</span>
-      <p class="font-xs my-1">{{ game.players[0].playerName }}</p>
+      <p class="font-xs my-1 black">{{ game.players[0].playerName }}</p>
       <button class="btn btn-secondary close-btn mb-1">vs</button>
-      <p class="font-xs">{{ game.players[1].playerName }}</p>
+      <p class="font-xs black">{{ game.players[1].playerName }}</p>
     </div>
   </div>
   <div *ngIf="games.length <= 0">

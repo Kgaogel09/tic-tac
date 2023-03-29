@@ -1,11 +1,12 @@
-$primary-color: #fff;
-$secondary-color: #000;
+$primary-color: #6B4EFF;
+$secondary-color: #fff;
+$tertiary-color: #000;
 $font-family: 'Inter', 'sans-serif';
 
 /* Global styles */
 body {
-  background-color: $primary-color;
-  color: $secondary-color;
+  background-color: $secondary-color;
+  color: $primary-color;
   font-family: $font-family;
   font-size: 16px;
 }
@@ -17,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $secondary-color;
+  color: $primary-color;
 }
 
 .w-25 {
@@ -137,6 +138,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.black {
+  color: $tertiary-color;
+}
+
 /* Links */
 a {
   color: $secondary-color;
@@ -167,14 +172,14 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: darken($secondary-color, 10%);
+  background-color: darken($primary-color, 10%);
   color: $primary-color;
 }
 
 .btn-secondary {
-  background-color: $secondary-color;
+  background-color: $primary-color;
   border: 2px solid transparent;
-  color: $primary-color;
+  color: $secondary-color;
 }
 
 .btn-sm {
@@ -198,7 +203,7 @@ a:hover {
 input,
 select,
 textarea {
-  border: 2px solid $secondary-color;
+  border: 2px solid #E3E5E5;
   border-radius: 5px;
   font-size: 16px;
   padding: 10px 20px;

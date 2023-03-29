@@ -1,7 +1,7 @@
 <div class="game-wrapper" *ngIf="!winner">
   <div class="player-info pt-5">
     <p class="font-sm transform">Now playing</p>
-    <h2 class="font-lg bold">{{ getCurrentPlayerName(player) }}</h2>
+    <h2 class="font-md bold black">{{ getCurrentPlayerName(player) }}</h2>
   </div>
   <div class="game-board">
     <div
@@ -10,7 +10,7 @@
       *ngFor="let value of squares; let i = index"
     >
       <button *ngIf="!value">{{ value }}</button>
-      <button *ngIf="value === 'X'">
+      <button *ngIf="value === 'X'" style="color: #6b4eff">
         {{ value }}
       </button>
       <button *ngIf="value === 'O'">{{ value }}</button>
@@ -29,7 +29,7 @@
 
 <div class="winner-wrapper" *ngIf="winner">
   <i class="fa fa-star-o icon mb-4" aria-hidden="true"></i>
-  <h2 class="font-md bold mb-4">{{ getCurrentPlayerName(winner) }}</h2>
+  <h2 class="font-md bold mb-4 black">{{ getCurrentPlayerName(winner) }}</h2>
   <button class="btn btn-secondary btn-md transform bold font-md mb-5">
     Wins
   </button>
